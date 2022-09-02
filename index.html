@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <style>
         .boxes {
             display: flex;
@@ -62,6 +62,7 @@
             border: 1px solid tomato;
         }
     </style>
+
 </head>
 
 <body>
@@ -69,7 +70,7 @@
         <div class="test1"> test</div>
         <span>Top 5 CSS Colors :</span>
         <div class="container">
-            <div class="boxes">
+            <div class="boxes" id="boxesId">
                 <div class="box color1">tomato</div>
                 <div class="box color2">dodgerblue</div>
                 <div class="box color3">rebeccapurple</div>
@@ -79,8 +80,13 @@
 
         </div>
     </div>
+    <script>
+        define(['./build/loading-indicator-min-cjs'], function(Loading) {
+            const loading = Loading('boxesId');
+            loading.init();
+        });
+    </script>
 
-    <script src="index.js"></script>
 </body>
 
 </html>
