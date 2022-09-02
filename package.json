@@ -1,0 +1,25 @@
+{
+    "name": "loadingindicatorjslibrary",
+    "version": "1.0.0",
+    "description": "Loading indicator JS library",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "rollup --config"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mailtodanish/LoadingIndicatorJSLibrary.git"
+    },
+    "keywords": [
+        "loading"
+    ],
+    "author": "mohammad ahshan danish",
+    "license": "MIT",
+    "devDependencies": {
+        "rollup": "^2.79.0"
+    },
+    "bugs": {
+        "url": "https://github.com/mailtodanish/LoadingIndicatorJSLibrary/issues"
+    },
+    "homepage": "https://github.com/mailtodanish/LoadingIndicatorJSLibrary#readme"
+}
