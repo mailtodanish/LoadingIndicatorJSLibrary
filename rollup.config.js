@@ -1,15 +1,28 @@
 import css from 'rollup-plugin-css-only';
+import pkg from './package.json';
+
+// The banner to add to the top of each file
+
+let banner = `/*
+  __version__: ${pkg.name} v${pkg.version}
+  __author__ : ${pkg.author}
+  __detail__:  ${pkg.description}
+  __copyright__: ${new Date().getFullYear()} 
+  __licence__: ${pkg.license} license 
+  */`;
 
 export default {
     input: "src/main.js",
     output: [{
-        file: "build/bundle.js",
+        file: "build/loading-indicator-min-cjs.js",
         format: 'cjs',
-        inlineDynamicImports: true
+        inlineDynamicImports: true,
+        banner: banner,
     }, {
-        file: "build/bundle-es.js",
+        file: "build/loading-indicator-min-iife.js",
         format: 'iife',
-        inlineDynamicImports: true
+        inlineDynamicImports: true,
+        banner: banner,
     }],
     plugins: [css({ output: 'bundle.css' })]
 }
