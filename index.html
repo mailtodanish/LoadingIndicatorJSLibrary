@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="http://requirejs.org/docs/release/2.1.5/comments/require.js"></script>
+
     <style>
         .boxes {
             display: flex;
+            justify-content: space-around;
         }
         
         .box {
@@ -81,9 +83,17 @@
         </div>
     </div>
     <script>
-        define(['./build/loading-indicator-min-cjs'], function(Loading) {
-            const loading = Loading('boxesId');
-            loading.init();
+        require(['./build/loading-indicator-min-amd.js'], function(cjs) {
+            const obj = new cjs("boxesId", {
+                innerText: "Please wait..."
+            });
+            obj.display();
+            console.error(obj);
+
+            setTimeout(() => {
+                obj.remove();
+            }, 5000)
+
         });
     </script>
 

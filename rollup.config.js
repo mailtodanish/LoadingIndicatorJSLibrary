@@ -14,8 +14,8 @@ let banner = `/*
 export default {
     input: "src/main.js",
     output: [{
-        file: "build/loading-indicator-min-cjs.js",
-        format: 'cjs',
+        file: "build/loading-indicator-min-amd.js",
+        format: 'amd',
         inlineDynamicImports: true,
         banner: banner,
     }, {
