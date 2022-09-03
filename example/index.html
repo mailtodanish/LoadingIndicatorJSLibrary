@@ -87,12 +87,16 @@
             const loadingMsg = new Loading("boxesId", {
                 innerText: "Please wait..."
             });
-            loadingMsg.display();
+
+            setTimeout(() => {
+                loadingMsg.display();
+            }, 5000)
+
 
             // invoke remove method after 5 seconds
             setTimeout(() => {
                 loadingMsg.remove();
-            }, 5000)
+            }, 9000)
 
         });
     </script>
