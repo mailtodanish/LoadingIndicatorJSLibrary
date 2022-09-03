@@ -5,8 +5,7 @@
   __copyright__: 2022 
   __licence__: MIT license 
   */
-define(function() {
-    "use strict";
+define((function () { 'use strict';
 
     function Constructor(elementId, options = {}) {
         let settings = Object.assign({
@@ -36,10 +35,10 @@ define(function() {
         loadingIndicatorElement.setAttribute(
             "style",
             `position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); font-weight: 600;
-            background: white;      
-            padding: 5px;
-            padding-left: 10px;
-            padding-right: 10px;`
+        background: white;      
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;`
         );
         let timeCounterElement = document.createElement("div");
         timeCounterElement.setAttribute(
@@ -49,7 +48,7 @@ define(function() {
         timeCounterElement.setAttribute(
             "style",
             `font-weight: 400;
-        font-size: 12px;`
+    font-size: 12px;`
         );
         timeCounterElement.innerText = 0;
         loadingIndicatorElement.appendChild(timeCounterElement);
@@ -57,11 +56,11 @@ define(function() {
     };
 
     Constructor.prototype.countTimeTaken = function() {
-        let timeCounter = this.timeCounter;
+        this.timeCounter;
         let settings = this.settings;
 
         function start() {
-            timeCounter = setTimeout(() => {
+            setTimeout(() => {
                 let time_count = document.getElementById(
                     `loading-time-counter-${settings.uniqueId}`
                 );
@@ -75,7 +74,7 @@ define(function() {
     Constructor.prototype.display = function() {
         this.dom.style.filter = "blur(5px)";
         if (!this.dom.parentElement) {
-            console.error("Element dont have any paraent element");
+            console.error("Element dont have any parent element");
         }
         this.dom.parentElement.appendChild(this.loadingDom);
         this.countTimeTaken();
@@ -89,4 +88,5 @@ define(function() {
     };
 
     return Constructor;
-});
+
+}));

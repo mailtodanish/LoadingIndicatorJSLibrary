@@ -23,6 +23,11 @@ export default {
         format: 'iife',
         inlineDynamicImports: true,
         banner: banner,
+    }, {
+        file: "build/loading-indicator-min-cjs.js",
+        format: 'cjs',
+        inlineDynamicImports: true,
+        banner: banner,
     }],
     plugins: [css({ output: 'bundle.css' })]
 }

@@ -83,15 +83,15 @@
         </div>
     </div>
     <script>
-        require(['./build/loading-indicator-min-amd.js'], function(cjs) {
-            const obj = new cjs("boxesId", {
+        require(['./loading-indicator-min-amd.js'], function(Loading) {
+            const loadingMsg = new Loading("boxesId", {
                 innerText: "Please wait..."
             });
-            obj.display();
-            console.error(obj);
+            loadingMsg.display();
 
+            // invoke remove method after 5 seconds
             setTimeout(() => {
-                obj.remove();
+                loadingMsg.remove();
             }, 5000)
 
         });

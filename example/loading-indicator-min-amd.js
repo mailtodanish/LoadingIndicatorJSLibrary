@@ -5,8 +5,7 @@
   __copyright__: 2022 
   __licence__: MIT license 
   */
-(function () {
-    'use strict';
+define((function () { 'use strict';
 
     function Constructor(elementId, options = {}) {
         let settings = Object.assign({
@@ -75,7 +74,7 @@
     Constructor.prototype.display = function() {
         this.dom.style.filter = "blur(5px)";
         if (!this.dom.parentElement) {
-            console.error("Element dont have any parent element");
+            console.error("Element dont have any paraent element");
         }
         this.dom.parentElement.appendChild(this.loadingDom);
         this.countTimeTaken();
@@ -90,4 +89,4 @@
 
     return Constructor;
 
-})();
+}));
