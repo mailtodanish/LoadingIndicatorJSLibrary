@@ -7,7 +7,7 @@
 
 ![LoadingIndicatorJSLibrary](demo.gif)
 
-Find the working documentation <a href="" target="_blank">here</a>
+Find the working documentation <a href="https://github.com/mailtodanish/LoadingIndicatorJSLibrary/tree/main/example" target="_blank">here</a>
 
 Written by [Mohammad Ahshan Danish](https://github.com/mailtodanish).
 
