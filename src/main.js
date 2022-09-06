@@ -73,6 +73,7 @@ Constructor.prototype.display = function() {
 
 Constructor.prototype.remove = function() {
     this.dom.style.filter = "unset";
+
     clearInterval(this.timeCounter);
     this.loadingDom.remove();
 

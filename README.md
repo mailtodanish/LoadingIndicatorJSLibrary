@@ -5,6 +5,7 @@
 
 **LoadingIndicatorJSLibrary** was created because I wanted to practice writing Javascript libraries. So **feel free** to fork and create pull requests!
 
+_**demo**_
 ![LoadingIndicatorJSLibrary](demo.gif)
 
 Find the working documentation <a href="" target="_blank">here</a>
