@@ -5,7 +5,8 @@
   __copyright__: 2022 
   __licence__: MIT license 
   */
-define((function () { 'use strict';
+define((function() {
+    'use strict';
 
     function Constructor(elementId, options = {}) {
         let settings = Object.assign({
@@ -20,8 +21,7 @@ define((function () { 'use strict';
         Object.defineProperties(this, {
             dom: { value: document.getElementById(elementId) },
             settings: { value: settings },
-            loadingDom: { value: this.createLoadingIcon(settings) },
-            timeCounter: { value: null },
+            loadingDom: { value: this.createLoadingIcon(settings) }
         });
     }
 
@@ -56,26 +56,24 @@ define((function () { 'use strict';
     };
 
     Constructor.prototype.countTimeTaken = function() {
-        this.timeCounter;
-        let settings = this.settings;
-
-        function start() {
-            setTimeout(() => {
+        this.start = function() {
+            this.timeCounter = setTimeout(() => {
                 let time_count = document.getElementById(
-                    `loading-time-counter-${settings.uniqueId}`
+                    `loading-time-counter-${this.settings.uniqueId}`
                 );
                 if (time_count) time_count.innerHTML = `${parseInt(time_count.innerHTML) + 1} sec`;
-                start();
+                this.start();
             }, 1000);
         }
-        start();
+
+        this.start();
+
     };
 
     Constructor.prototype.display = function() {
-        // Fixme: validate dom is not null
         this.dom.style.filter = "blur(5px)";
         if (!this.dom.parentElement) {
-            console.error("Element dont have any parent element");
+            console.error("Element dont have any paraent element");
         }
         this.dom.parentElement.appendChild(this.loadingDom);
         this.countTimeTaken();
@@ -83,6 +81,7 @@ define((function () { 'use strict';
 
     Constructor.prototype.remove = function() {
         this.dom.style.filter = "unset";
+
         clearInterval(this.timeCounter);
         this.loadingDom.remove();
 
