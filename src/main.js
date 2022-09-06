@@ -12,7 +12,7 @@ function Constructor(elementId, options = {}) {
         dom: { value: document.getElementById(elementId) },
         settings: { value: settings },
         loadingDom: { value: this.createLoadingIcon(settings) },
-        timeCounter: { value: null },
+
     });
 }
 
@@ -47,19 +47,18 @@ Constructor.prototype.createLoadingIcon = function(settings) {
 };
 
 Constructor.prototype.countTimeTaken = function() {
-    let timeCounter = this.timeCounter;
-    let settings = this.settings;
-
-    function start() {
-        timeCounter = setTimeout(() => {
+    this.start = function() {
+        this.timeCounter = setTimeout(() => {
             let time_count = document.getElementById(
-                `loading-time-counter-${settings.uniqueId}`
+                `loading-time-counter-${this.settings.uniqueId}`
             );
             if (time_count) time_count.innerHTML = `${parseInt(time_count.innerHTML) + 1} sec`;
-            start();
+            this.start();
         }, 1000);
     }
-    start();
+
+    this.start();
+
 };
 
 Constructor.prototype.display = function() {
@@ -73,7 +72,6 @@ Constructor.prototype.display = function() {
 
 Constructor.prototype.remove = function() {
     this.dom.style.filter = "unset";
-
     clearInterval(this.timeCounter);
     this.loadingDom.remove();
 
