@@ -72,6 +72,7 @@ define((function () { 'use strict';
     };
 
     Constructor.prototype.display = function() {
+        // Fixme: validate dom is not null
         this.dom.style.filter = "blur(5px)";
         if (!this.dom.parentElement) {
             console.error("Element dont have any parent element");
