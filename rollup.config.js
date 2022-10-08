@@ -28,6 +28,12 @@ export default {
         format: 'cjs',
         inlineDynamicImports: true,
         banner: banner,
+    },
+    {
+        file: "build/loading-indicator-min-es.js",
+        format: 'es',
+        inlineDynamicImports: true,
+        banner: banner,
     }],
     plugins: [css({ output: 'bundle.css' })]
 }
