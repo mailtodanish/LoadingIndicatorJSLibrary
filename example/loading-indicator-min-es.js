@@ -1,3 +1,10 @@
+/*
+  __version__: loadingindicatorjslibrary v1.0.0
+  __author__ : mohammad ahshan danish
+  __detail__:  Loading indicator JS library
+  __copyright__: 2022 
+  __licence__: MIT license 
+  */
 class Loader {
 
     constructor(elementId,options={}){
@@ -70,6 +77,5 @@ class Loader {
  }
  
  }
- 
- export default Loader;
- 
+
+export { Loader as default };
