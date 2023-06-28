@@ -24,15 +24,11 @@ _**remove**_ method is to remove busy msg.
                 innerText: "Please wait..."
             });
 
-            setTimeout(() => {
-                loadingMsg.display();
-            }, 5000)
 
-
-            // invoke remove method after 5 seconds
-            setTimeout(() => {
-                loadingMsg.remove();
-            }, 9000)
+// show busy
+loadingMsg.display();
+// remove busy
+loadingMsg.remove();
 
         });
     </script>
